@@ -37,6 +37,9 @@ async function main () {
         </div>
     );
 
+    // Compile styles
+    ujsx.StyleRule.compileGlobals();
+
     document.body.appendChild( output );
 }
 

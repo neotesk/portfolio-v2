@@ -24,7 +24,7 @@ export function Route ( { attributes, children } ) {
 
 export default function Router ( { attributes } ) {
     const base = attributes.base || "/";
-    const output = <div id={ attributes.id } class={ attributes.class }></div>;
+    const output = <div></div>;
     const shadow = <div id="__router_garbage"></div>;
     let current = null;
 
