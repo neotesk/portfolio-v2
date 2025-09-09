@@ -1,0 +1,176 @@
+project:
+    name: neotesk@interweb
+    description: Another portfolio website for me.
+    version: 2.0.0
+    source: https://github.com/neotesk/portfolio-v2
+    author: neotesk
+    license: WTFPL
+
+depends:
+    commands:
+        - node
+        - esbuild
+
+var:
+    ujsx_build_args: --define:global=window
+                     --bundle
+                     --target=es2017
+                     --alias:ujsx=./lib/ujsx/src/index.js
+                     --jsx-factory=ujsx.createElement
+                     --jsx-fragment=ujsx.Fragment
+                     --outfile=build/portfolio.lib.js
+                     src/main.jsx
+
+.build:
+    description: Performs a build operation
+    actions:
+        -
+            action: mkdir
+            destination: build
+        -
+            action: shell
+            cmdlines:
+                - node scripts/compileAssets.js
+        -
+            action: touch
+            destination: build/.htaccess
+            content: |
+                RewriteEngine on
+                RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteCond %{REQUEST_FILENAME} !-d
+                RewriteRule ^.*$ /index.html [L,QSA]
+        -
+            action: touch
+            destination: build/index.html
+            content: |
+                <html>
+                    <head>
+                        <title>{{project.name}}</title>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <link rel="app-data" href="appdata.love" />
+                        <script defer src="portfolio.lib.js"></script>
+                        <style>
+                            * {
+                                margin: 0px;
+                                padding: 0px;
+                                box-sizing: border-box;
+                            }
+                            body {
+                                background-color: #121212;
+                            }
+                            @keyframes marquee_a1 {
+                                0% {
+                                    left: 0;
+                                    transform: translateX(-100%);
+                                }
+                                100%,
+                                55% {
+                                    left: 100%;
+                                    transform: translateX(0);
+                                }
+                            }
+                            @keyframes marquee_a2 {
+                                0%,
+                                100% {
+                                    width: 30%;
+                                }
+                                50% {
+                                    width: 70%;
+                                }
+                            }
+                            @keyframes fade_a {
+                                0% {
+                                    filter: blur( 0px );
+                                    transform: scale( 1.0 );
+                                    opacity: 100%;
+                                }
+                                100% {
+                                    filter: blur( 10px );
+                                    transform: scale( 0.4 );
+                                    opacity: 0%;
+                                }
+                            }
+                            .d-none {
+                                display: none;
+                            }
+                            .d-fade {
+                                animation: fade_a .5s cubic-bezier( .54,.02,.94,.62 ) forwards;
+                            }
+                            #preloader {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                position: fixed;
+                                top: 0px;
+                                left: 0px;
+                                width: 100vw;
+                                height: 100vh;
+                                gap: 10px;
+                            }
+                            #preloader-text {
+                                color: #a0a0a0;
+                                font-family: monospace;
+                                font-size: 12px;
+                            }
+                            #preloader > .marquee {
+                                height: 2px;
+                                position: relative;
+                                width: 400px;
+                                overflow: hidden;
+                                background-color: #323232;
+                            }
+                            #preloader > .marquee > div {
+                                position: absolute;
+                                height: 100%;
+                                width: 30%;
+                                background-color: #c0c0c0;
+                            }
+                            #preloader > .progress {
+                                height: 2px;
+                                position: relative;
+                                width: 400px;
+                                overflow: hidden;
+                                background-color: #323232;
+                            }
+                            #preloader > .progress > div {
+                                position: absolute;
+                                height: 100%;
+                                width: var( --p );
+                                background-color: #c0c0c0;
+                            }
+                            #preloader > .marquee > div:first-child {
+                                animation:
+                                    3s cubic-bezier( 0.49, 0.7, 0.7, 0.35 ) infinite marquee_a1,
+                                    2s ease-in-out infinite marquee_a2;
+                            }
+                            #preloader > .marquee > div:nth-child( 2 ) {
+                                animation:
+                                    3s cubic-bezier( 0.49, 0.7, 0.7, 0.35 ) infinite marquee_a1,
+                                    3.5s ease-in-out infinite marquee_a2;
+                                animation-delay: -1.3s;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <!--
+                            {{project.name}} {{project.version}}
+                            {{project.description}}
+                            Built at {{rt.time}}
+                        -->
+                        <div id="preloader">
+                            <div id="preloader-text">Waiting for server.</div>
+                            <div class="marquee">
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="progress d-none">
+                                <div></div>
+                            </div>
+                        </div>
+                    </body>
+                </html>
+        -
+            action: shell
+            cmdlines:
+                - esbuild {{var.ujsx_build_args}}

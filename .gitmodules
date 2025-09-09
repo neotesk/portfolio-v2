@@ -1,0 +1,3 @@
+[submodule "ujsx"]
+	path = lib/ujsx
+	url = https://github.com/neotesk/ujsx
