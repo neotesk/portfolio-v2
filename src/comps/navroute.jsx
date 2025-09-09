@@ -4,7 +4,7 @@ import g from "../util/globalSingleton";
 
 const nav_route = new ujsx.StyleRule( {
     padding: "4px 12px",
-    border: "1px solid #323232",
+    border: "1px solid #484848",
     backgroundColor: "#242424",
     borderRadius: "20px",
     textDecoration: "none",
@@ -13,8 +13,20 @@ const nav_route = new ujsx.StyleRule( {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    gap: ujsx.Pixel( 5 )
+    gap: ujsx.Pixel( 5 ),
+    boxShadow: "0px 0px 13px 0px rgba( 0,0,0,0.3 )",
+    transition: "all .5s cubic-bezier(.2,1.86,.25,.99)"
 } );
+
+new ujsx.StyleRule( {
+    transform: "scale(1.05)",
+    boxShadow: "0px 0px 9px 0px rgba( 0,0,0,0.6 )"
+}, nav_route.selector + ":hover" );
+
+new ujsx.StyleRule( {
+    transform: "scale(0.95)",
+    boxShadow: "0px 0px 12px 0px rgba( 0,0,0,0.4 )"
+}, nav_route.selector + ":active" );
 
 const nav_img = new ujsx.StyleRule( {
     height: ujsx.Pixel( 21 )
