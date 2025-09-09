@@ -1,5 +1,5 @@
 import ujsx from 'ujsx';
-import Router, { Route } from '../util/router';
+import Router from '../util/router';
 import g from '../util/globalSingleton';
 
 import MainHome from './main.home';

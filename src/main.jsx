@@ -3,6 +3,7 @@ import { FetchAssets, AssetManager } from "./util/assetUncompile";
 import { Sleep } from './util/utils';
 import reportManager from "./util/reportManager";
 import g from './util/globalSingleton';
+import AddFont from './util/fontLoader';
 
 async function main () {
     const reportText = document.getElementById( "preloader-text" );
@@ -23,6 +24,11 @@ async function main () {
     // Fetch assets
     const assets = await FetchAssets();
     g.assetManager = new AssetManager( assets );
+
+    // Add fonts
+    AddFont(
+        { familyName: "Red Hat Display", url: g.assetManager.get( "font/Red_Hat_Display/rhdisplay.ttf" ) }
+    )
 
     // Animate the preloader
     preloader.classList.add( "d-fade" );
