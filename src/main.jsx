@@ -30,9 +30,10 @@ async function main () {
     preloader = ( preloader.remove(), null );
 
     // After animating, render the page
+    const MainPage = require( './page/mainpage' ).default;
     const output = (
         <div class="app">
-            Hello World
+            <MainPage />
         </div>
     );
 

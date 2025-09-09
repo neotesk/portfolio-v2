@@ -42,7 +42,7 @@ export async function FetchAssets () {
     reportManager.report( "Uncompiling Application Data..." );
     const assets = await UncompileAssets( uBuf );
     reportManager.report( "Application data is ready..." );
-    return Object.fromEntries( Object.entries( assets ).map( e => [ e[ 0 ], URL.createObjectURL( new Blob( e[ 1 ] ) ) ] ) );
+    return assets;
 }
 
 export class AssetManager {
@@ -50,7 +50,7 @@ export class AssetManager {
         this.assets = assets;
     }
 
-    get ( addr ) {
-        return this.assets[ addr ];
+    get ( addr, attr = {} ) {
+        return URL.createObjectURL( new Blob( [ this.assets[ addr ] ], attr ) );
     }
 }
