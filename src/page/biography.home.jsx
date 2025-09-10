@@ -28,7 +28,7 @@ export default function BiographyHome () {
             </Section>
             <Section styleRule={ section }>
                 <h1>My Capabilities</h1>
-                I can develop <b>Web applications</b>, <b>CLI Tools</b> <i>and probably more</i> and I sometimes <b>make music</b> and <b>SFX</b>
+                I can develop <b>Web applications</b>, <b>CLI Tools</b> <i>and probably more</i> and I sometimes <b>make music</b> and <b>SFX</b>. I mostly use Go and Javascript for my coding projects and as a DAW I can use FL Studio and Bitwig Studio
             </Section>
         </div>
     )
