@@ -29,6 +29,10 @@ new ujsx.StyleRule( {
     animationDelay: ".2s"
 }, row.selector + ".b" );
 
+new ujsx.StyleRule( {
+    animationDelay: ".3s"
+}, row.selector + ".c" );
+
 const column = new ujsx.StyleRule( {
     display: "flex",
     flexDirection: "column",
@@ -60,7 +64,7 @@ const para = new ujsx.StyleRule( {
 export default function BiographyHome () {
     return (
         <div styleRule={ wrapper }>
-            <a href="https://github.com/neotesk/truct" styleRule={ anchor }>
+            <a target="_blank" href="https://github.com/neotesk/truct" styleRule={ anchor }>
                 <Section styleRule={ row }>
                     <img styleRule={ image } src={ g.assetManager.get( 'img/truct.png' ) } alt="Truct Logo" />
                     <div styleRule={ column }>
@@ -69,8 +73,17 @@ export default function BiographyHome () {
                     </div>
                 </Section>
             </a>
-            <a href="https://github.com/neotesk/ujsx" styleRule={ anchor }>
+            <a target="_blank" href="https://github.com/neotesk/spatula" styleRule={ anchor }>
                 <Section styleRule={ row } class="a">
+                    <img styleRule={ image } src={ g.assetManager.get( 'img/spatula.png' ) } alt="Spatula Logo" />
+                    <div styleRule={ column }>
+                        <h1>Spatula</h1>
+                        <p styleRule={ para }>Spatula is an SPA server for debugging/testing purposes. It allows you to serve your Single Page Applications like React, Svelte and more. It also has live-server capabilities so you can update the web view as soon as you perform changes.</p>
+                    </div>
+                </Section>
+            </a>
+            <a target="_blank" href="https://github.com/neotesk/ujsx" styleRule={ anchor }>
+                <Section styleRule={ row } class="b">
                     <img styleRule={ image } src={ g.assetManager.get( 'img/ujsx.png' ) } alt="uJSX Logo" />
                     <div styleRule={ column }>
                         <h1>μJSX</h1>
@@ -78,8 +91,8 @@ export default function BiographyHome () {
                     </div>
                 </Section>
             </a>
-            <a href="https://github.com/neotesk/nethop" styleRule={ anchor }>
-                <Section styleRule={ row } class="b">
+            <a target="_blank" href="https://github.com/neotesk/nethop" styleRule={ anchor }>
+                <Section styleRule={ row } class="c">
                     <img styleRule={ image } src={ g.assetManager.get( 'img/nethop.png' ) } alt="Nethop Logo" />
                     <div styleRule={ column }>
                         <h1>Nethop</h1>
