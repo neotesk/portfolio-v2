@@ -50,7 +50,7 @@ export default function MainHome () {
                 <img styleRule={ image } src={ g.assetManager.get( 'img/neologo.png' ) } alt="Neo Logo" />
                 <div styleRule={ column }>
                     <span>Name: <b>Ali</b> <i styleRule={ text_slight }>(preferably Eli or Neo)</i></span>
-                    <span>Location: <b>Izmir</b></span>
+                    <span>Location: <b>Izmir, Turkey</b></span>
                     <span>Pronouns: <b>he/him</b></span>
                     <span>Fuel: <b>Cola</b> <i styleRule={ text_slight }>(sometimes coffee)</i></span>
                 </div>
