@@ -14,8 +14,8 @@ const row = new ujsx.StyleRule( {
     flexWrap: "wrap",
     gap: ujsx.Pixel( "24" ),
     fontFamily: "Red Hat Display",
-    maxWidth: "max-content!important",
-    margin: "auto"
+    opacity: ujsx.Percent( 0 ),
+    animation: "fade_in_a .3s cubic-bezier(.13,.74,.29,.98) forwards"
 } );
 
 const text_slight = new ujsx.StyleRule( {
@@ -38,6 +38,9 @@ const wrapper = new ujsx.StyleRule( {
 
 const section = new ujsx.StyleRule( {
     fontFamily: "Red Hat Display",
+    opacity: ujsx.Percent( 0 ),
+    animation: "fade_in_a .3s cubic-bezier(.13,.74,.29,.98) forwards",
+    animationDelay: ".1s"
 } );
 
 export default function MainHome () {
@@ -58,7 +61,7 @@ export default function MainHome () {
                     <span>Discord: <b>neotesk</b></span>
                 </div>
             </Section>
-            <Section styleRule={ section }>
+            <Section styleRule={ section } class="a">
                 <h1>About me</h1>
                 I am <b>Ali</b> <i styleRule={ text_slight }>(preferably Eli or Neo)</i> and I am professionalized in web development, specifically on Javascript (Node.js, React.js and SolidJS). I also create various designs and design trends based on my mood or however the current market is going to love it. I mostly prefer Brutalist designs, Neumorphistic designs and Extremely Minimalist design trends.
             </Section>

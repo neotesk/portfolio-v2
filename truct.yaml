@@ -91,6 +91,18 @@ var:
                                     opacity: 0%;
                                 }
                             }
+                            @keyframes fade_in_a {
+                                0% {
+                                    filter: blur( 10px );
+                                    transform: translateY( -50px );
+                                    opacity: 0%;
+                                }
+                                100% {
+                                    filter: blur( 0px );
+                                    transform: translateY( 0px );
+                                    opacity: 100%;
+                                }
+                            }
                             .d-none {
                                 display: none;
                             }
