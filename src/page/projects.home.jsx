@@ -43,10 +43,6 @@ const column = new ujsx.StyleRule( {
     width: ujsx.Percent( 0 )
 } );
 
-const text_slight = new ujsx.StyleRule( {
-    color: "#a0a0a0"
-} );
-
 const wrapper = new ujsx.StyleRule( {
     display: "flex",
     flexDirection: "column",

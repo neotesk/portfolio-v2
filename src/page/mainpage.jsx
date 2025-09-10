@@ -7,7 +7,6 @@ import ProjectsHome from './projects.home';
 import BiographyHome from './biography.home';
 
 import Container from '../comps/container';
-import RowContainer from '../comps/rowcontainer';
 import NavRoute from '../comps/navroute';
 
 const nav = new ujsx.StyleRule( {
