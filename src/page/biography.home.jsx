@@ -4,7 +4,7 @@ import Section from '../comps/section';
 const section = new ujsx.StyleRule( {
     fontFamily: "Red Hat Display",
     opacity: ujsx.Percent( 0 ),
-    animation: "fade_in_a .3s cubic-bezier(.13,.74,.29,.98) forwards"
+    animation: "fade_in_a .3s cubic-bezier( .13,.74,.29,.98 ) forwards"
 } );
 
 new ujsx.StyleRule( {

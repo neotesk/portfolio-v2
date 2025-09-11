@@ -12,7 +12,7 @@ import NavRoute from '../comps/navroute';
 const nav = new ujsx.StyleRule( {
     borderBottom: "1px solid #242424",
     opacity: ujsx.Percent( 0 ),
-    animation: "fade_in_a .3s cubic-bezier(.13,.74,.29,.98) forwards"
+    animation: "fade_in_a .3s cubic-bezier( .13,.74,.29,.98 ) forwards"
 } );
 
 const nav_container = new ujsx.StyleRule( {

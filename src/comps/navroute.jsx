@@ -15,7 +15,7 @@ const nav_route = new ujsx.StyleRule( {
     alignItems: "center",
     gap: ujsx.Pixel( 5 ),
     boxShadow: "0px 0px 13px 0px rgba( 0,0,0,0.3 )",
-    transition: "all .5s cubic-bezier(.2,1.86,.25,.99)"
+    transition: "all .5s cubic-bezier( .2,1.86,.25,.99 )"
 } );
 
 new ujsx.StyleRule( {

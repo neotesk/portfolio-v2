@@ -15,7 +15,7 @@ const row = new ujsx.StyleRule( {
     gap: ujsx.Pixel( "24" ),
     fontFamily: "Red Hat Display",
     opacity: ujsx.Percent( 0 ),
-    animation: "fade_in_a .3s cubic-bezier(.13,.74,.29,.98) forwards"
+    animation: "fade_in_a .3s cubic-bezier( .13,.74,.29,.98 ) forwards"
 } );
 
 const text_slight = new ujsx.StyleRule( {
@@ -39,7 +39,7 @@ const wrapper = new ujsx.StyleRule( {
 const section = new ujsx.StyleRule( {
     fontFamily: "Red Hat Display",
     opacity: ujsx.Percent( 0 ),
-    animation: "fade_in_a .3s cubic-bezier(.13,.74,.29,.98) forwards",
+    animation: "fade_in_a .3s cubic-bezier( .13,.74,.29,.98 ) forwards",
     animationDelay: ".1s"
 } );
 

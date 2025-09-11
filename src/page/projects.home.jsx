@@ -18,7 +18,7 @@ const row = new ujsx.StyleRule( {
     maxWidth: "max-content!important",
     margin: "auto",
     opacity: ujsx.Percent( 0 ),
-    animation: "fade_in_a .3s cubic-bezier(.13,.74,.29,.98) forwards"
+    animation: "fade_in_a .3s cubic-bezier( .13,.74,.29,.98 ) forwards"
 } );
 
 new ujsx.StyleRule( {
